@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstrate the submit event.</title>
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Demonstrate the submit event.</h1>
+            <p>JavaScript experiment from the supplied practical list.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+    <nav>
+        <a href="../../index.html">Home</a>
+        <a href="index.html">Back to Programs</a>
+    </nav>
+    
+        <section class="card">
+            <h2>Working Demonstration</h2>
+            
+        <input id="weight" type="number" placeholder="Weight (kg)">
+        <input id="height" type="number" placeholder="Height (cm)">
+        <button id="calculate">Calculate BMI</button>
+        <div id="out" class="output"></div>
+        
+        </section>
+    </main>
+
+    <footer>
+        A. Kumar | CDS/2025/2009 | Section 7
+    </footer>
+    <script>
+        document.getElementById("calculate").onclick = () => {
+            const weight = Number(document.getElementById("weight").value);
+            const height = Number(document.getElementById("height").value) / 100;
+            const bmi = height > 0 ? weight / (height * height) : 0;
+            document.getElementById("out").textContent = `BMI: ${bmi.toFixed(2)}`;
+        };
+        </script>
+</body>
+</html>
