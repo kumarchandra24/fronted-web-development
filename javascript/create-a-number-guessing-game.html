@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a number guessing game.</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Create a number guessing game.</h1>
+            <p>JavaScript experiment from the supplied practical list.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Back to Programs</a>
+    </nav>
+    
+        <section class="card">
+            <h2>Working Demonstration</h2>
+            
+        <input id="guess" type="number" min="1" max="100" placeholder="1 to 100">
+        <button id="check">Check</button>
+        <div id="out" class="output"></div>
+        
+        </section>
+    </main>
+
+    <footer>
+        A. Kumar | CDS/2025/2009 | Section 7
+    </footer>
+    <script>
+        const secret = Math.floor(Math.random() * 100) + 1;
+        document.getElementById("check").onclick = () => {
+            const guess = Number(document.getElementById("guess").value);
+            const out = document.getElementById("out");
+            if (!guess) out.textContent = "Enter a number.";
+            else if (guess === secret) out.textContent = "Correct!";
+            else out.textContent = guess < secret ? "Too low." : "Too high.";
+        };
+        </script>
+</body>
+</html>

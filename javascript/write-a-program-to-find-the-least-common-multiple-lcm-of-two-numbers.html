@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write a program to find the least common multiple (LCM) of two numbers.</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Write a program to find the least common multiple (LCM) of two numbers.</h1>
+            <p>JavaScript experiment from the supplied practical list.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Back to Programs</a>
+    </nav>
+    
+        <section class="card">
+            <h2>Working Demonstration</h2>
+            <input id="a" type="number" value="12"><input id="b" type="number" value="18"><button id="run">Find LCM</button><div id="out" class="output"></div>
+        </section>
+    </main>
+
+    <footer>
+        A. Kumar | CDS/2025/2009 | Section 7
+    </footer>
+    <script>document.getElementById("run").onclick = () => { let a = Math.abs(Number(document.getElementById("a").value)); let b = Math.abs(Number(document.getElementById("b").value)); let x=a,y=b; while(y) [x,y]=[y,x%y]; document.getElementById("out").textContent = `LCM: ${a && b ? Math.abs(a*b)/x : 0}`; };</script>
+</body>
+</html>

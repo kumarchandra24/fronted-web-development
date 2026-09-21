@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a to-do list using JavaScript.</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Create a to-do list using JavaScript.</h1>
+            <p>JavaScript experiment from the supplied practical list.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Back to Programs</a>
+    </nav>
+    
+        <section class="card">
+            <h2>Working Demonstration</h2>
+            
+        <input id="task" placeholder="Enter a task">
+        <button id="add">Add Task</button>
+        <ul id="list"></ul>
+        
+        </section>
+    </main>
+
+    <footer>
+        A. Kumar | CDS/2025/2009 | Section 7
+    </footer>
+    <script>
+        document.getElementById("add").onclick = () => {
+            const input = document.getElementById("task");
+            if (!input.value.trim()) return;
+            const li = document.createElement("li");
+            li.textContent = input.value;
+            li.onclick = () => li.remove();
+            document.getElementById("list").appendChild(li);
+            input.value = "";
+        };
+        </script>
+</body>
+</html>

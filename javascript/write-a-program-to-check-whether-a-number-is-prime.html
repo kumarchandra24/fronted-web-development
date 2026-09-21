@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write a program to check whether a number is prime.</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Write a program to check whether a number is prime.</h1>
+            <p>JavaScript experiment from the supplied practical list.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Back to Programs</a>
+    </nav>
+    
+        <section class="card">
+            <h2>Working Demonstration</h2>
+            <input id="n" type="number" value="17"><button id="run">Check</button><div id="out" class="output"></div>
+        </section>
+    </main>
+
+    <footer>
+        A. Kumar | CDS/2025/2009 | Section 7
+    </footer>
+    <script>document.getElementById("run").onclick = () => { const n = Number(document.getElementById("n").value); let prime = n > 1; for (let i = 2; i * i <= n; i++) if (n % i === 0) prime = false; document.getElementById("out").textContent = prime ? "Prime" : "Not prime"; };</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a countdown timer using JavaScript.</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Create a countdown timer using JavaScript.</h1>
+            <p>JavaScript experiment from the supplied practical list.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Back to Programs</a>
+    </nav>
+    
+        <section class="card">
+            <h2>Working Demonstration</h2>
+            
+        <input id="seconds" type="number" min="1" value="10">
+        <button id="start">Start Countdown</button>
+        <div id="out" class="output"></div>
+        
+        </section>
+    </main>
+
+    <footer>
+        A. Kumar | CDS/2025/2009 | Section 7
+    </footer>
+    <script>
+        let timer;
+        document.getElementById("start").onclick = () => {
+            clearInterval(timer);
+            let n = Number(document.getElementById("seconds").value);
+            const out = document.getElementById("out");
+            out.textContent = n;
+            timer = setInterval(() => {
+                n--;
+                out.textContent = n;
+                if (n <= 0) {
+                    clearInterval(timer);
+                    out.textContent = "Time is up!";
+                }
+            }, 1000);
+        };
+        </script>
+</body>
+</html>
