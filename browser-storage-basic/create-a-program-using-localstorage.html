@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a program using localStorage.</title>
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Create a program using localStorage.</h1>
+            <p>JavaScript experiment from the supplied practical list.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+    <nav>
+        <a href="../../index.html">Home</a>
+        <a href="index.html">Back to Programs</a>
+    </nav>
+    
+        <section class="card">
+            <h2>Working Demonstration</h2>
+            
+        <input id="value" placeholder="Value">
+        <button id="save">Save</button>
+        <button id="read">Read</button>
+        <button id="clear">Clear</button>
+        <div id="out" class="output"></div>
+        
+        </section>
+    </main>
+
+    <footer>
+        A. Kumar | CDS/2025/2009 | Section 7
+    </footer>
+    <script>
+        document.getElementById("save").onclick = () => {
+            localStorage.setItem("demoValue", document.getElementById("value").value);
+            document.getElementById("out").textContent = "Saved to localStorage.";
+        };
+        document.getElementById("read").onclick = () => {
+            document.getElementById("out").textContent =
+                `Stored value: ${localStorage.getItem("demoValue") ?? "No value saved"}`;
+        };
+        document.getElementById("clear").onclick = () => {
+            localStorage.removeItem("demoValue");
+            document.getElementById("out").textContent = "Item removed.";
+        };
+        </script>
+</body>
+</html>

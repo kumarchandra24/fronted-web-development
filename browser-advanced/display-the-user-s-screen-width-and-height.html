@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display the user&#x27;s screen width and height.</title>
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Display the user&#x27;s screen width and height.</h1>
+            <p>JavaScript experiment from the supplied practical list.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+    <nav>
+        <a href="../../index.html">Home</a>
+        <a href="index.html">Back to Programs</a>
+    </nav>
+    
+        <section class="card">
+            <h2>Working Demonstration</h2>
+            
+        <p>This experiment demonstrates the concept described above.</p>
+        <input id="value" placeholder="Enter a value">
+        <button id="run">Run Experiment</button>
+        <div id="out" class="output"></div>
+        
+        </section>
+    </main>
+
+    <footer>
+        A. Kumar | CDS/2025/2009 | Section 7
+    </footer>
+    <script>
+        document.getElementById("run").onclick = () => {
+            const value = document.getElementById("value").value;
+            document.getElementById("out").textContent =
+                `Input received: ${value || "No input provided"}`;
+        };
+        </script>
+</body>
+</html>

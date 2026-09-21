@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a simple expense tracker.</title>
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Create a simple expense tracker.</h1>
+            <p>JavaScript experiment from the supplied practical list.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+    <nav>
+        <a href="../../index.html">Home</a>
+        <a href="index.html">Back to Programs</a>
+    </nav>
+    
+        <section class="card">
+            <h2>Working Demonstration</h2>
+            
+        <input id="name" placeholder="Expense name">
+        <input id="amount" type="number" placeholder="Amount">
+        <button id="add">Add Expense</button>
+        <ul id="list"></ul>
+        <strong>Total: ₹<span id="total">0</span></strong>
+        
+        </section>
+    </main>
+
+    <footer>
+        A. Kumar | CDS/2025/2009 | Section 7
+    </footer>
+    <script>
+        let total = 0;
+        document.getElementById("add").onclick = () => {
+            const name = document.getElementById("name").value.trim();
+            const amount = Number(document.getElementById("amount").value);
+            if (!name || amount <= 0) return;
+            total += amount;
+            const li = document.createElement("li");
+            li.textContent = `${name}: ₹${amount}`;
+            document.getElementById("list").appendChild(li);
+            document.getElementById("total").textContent = total.toFixed(2);
+        };
+        </script>
+</body>
+</html>

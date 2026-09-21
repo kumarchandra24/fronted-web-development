@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a tic-tac-toe game.</title>
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Create a tic-tac-toe game.</h1>
+            <p>JavaScript experiment from the supplied practical list.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+    <nav>
+        <a href="../../index.html">Home</a>
+        <a href="index.html">Back to Programs</a>
+    </nav>
+    
+        <section class="card">
+            <h2>Working Demonstration</h2>
+            
+        <div id="board" class="grid" style="max-width: 330px;"></div>
+        <div id="out" class="output">Player X starts.</div>
+        
+        </section>
+    </main>
+
+    <footer>
+        A. Kumar | CDS/2025/2009 | Section 7
+    </footer>
+    <script>
+        const board = document.getElementById("board");
+        const out = document.getElementById("out");
+        let turn = "X";
+        const cells = Array(9).fill("");
+        const wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+        function draw() {
+            board.innerHTML = "";
+            cells.forEach((value, i) => {
+                const b = document.createElement("button");
+                b.textContent = value;
+                b.style.height = "90px";
+                b.style.fontSize = "2rem";
+                b.onclick = () => {
+                    if (cells[i]) return;
+                    cells[i] = turn;
+                    draw();
+                    const win = wins.some(w => w.every(j => cells[j] === turn));
+                    if (win) {
+                        out.textContent = `${turn} wins!`;
+                        board.querySelectorAll("button").forEach(x => x.disabled = true);
+                    } else if (cells.every(Boolean)) {
+                        out.textContent = "Draw!";
+                    } else {
+                        turn = turn === "X" ? "O" : "X";
+                        out.textContent = `Player ${turn}'s turn.`;
+                    }
+                };
+                board.appendChild(b);
+            });
+        }
+        draw();
+        </script>
+</body>
+</html>

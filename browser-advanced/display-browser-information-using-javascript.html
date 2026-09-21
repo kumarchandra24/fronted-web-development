@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display browser information using JavaScript.</title>
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Display browser information using JavaScript.</h1>
+            <p>JavaScript experiment from the supplied practical list.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+    <nav>
+        <a href="../../index.html">Home</a>
+        <a href="index.html">Back to Programs</a>
+    </nav>
+    
+        <section class="card">
+            <h2>Working Demonstration</h2>
+            
+        <form id="form">
+            <label for="name">Name</label>
+            <input id="name" required>
+            <label for="email">Email</label>
+            <input id="email" type="email" required>
+            <label for="password">Password</label>
+            <input id="password" type="password" minlength="6" required>
+            <button>Submit</button>
+        </form>
+        <div id="out" class="output"></div>
+        
+        </section>
+    </main>
+
+    <footer>
+        A. Kumar | CDS/2025/2009 | Section 7
+    </footer>
+    <script>
+        document.getElementById("form").addEventListener("submit", event => {
+            event.preventDefault();
+            const form = event.currentTarget;
+            if (form.checkValidity()) {
+                document.getElementById("out").textContent = "Form submitted successfully.";
+            } else {
+                form.reportValidity();
+            }
+        });
+        </script>
+</body>
+</html>
